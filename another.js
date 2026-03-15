@@ -1,7 +1,7 @@
 let map = {};
 let reverseMap = {};
 function encrypt(){
-    const chars = "abcdefghijklmnopqrstuvwxyz123456789 ";
+    const chars = "abcdefghijklmnopqrstuvwxyz123456789.'():?/@ ";
     let symbols = "!@#$%^&*()_+-={}[]:;<>,.?/|~ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     symbols=symbols.split("");
     let message = document.getElementById("normalmessage").value.toLowerCase();
@@ -11,7 +11,7 @@ function encrypt(){
         document.getElementById("decryptedmessage").innerHTML="";
         return;
     }
-    if(!(/^[A-Za-z0-9 ]+$/.test(message))){
+    if(!(/^[A-Za-z0-9./?()#:'@ ]+$/.test(message))){
         document.getElementById("emptymessage").innerHTML="EMPTY VALID INPUT...!";
         document.getElementById("decryptbutton").style.display="none";
         document.getElementById("decryptedmessage").innerHTML="";
